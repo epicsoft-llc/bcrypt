@@ -14,7 +14,7 @@ Usage: bcrypt [action] argument ...
 ```
 
 ## Example ##
-```docker
+```
 docker run epicsoft/bcrypt hash password 14
 > $2a$14$uPMxyauwt6lrPXAW2rXsUeKo0fvcR/PP8dxQmPhcWFZqwoBmArnx2
 

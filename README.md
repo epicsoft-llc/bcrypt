@@ -1,7 +1,5 @@
 bcrypt CLI for generating and matching bcrypt hashes
 
-[![](https://images.microbadger.com/badges/image/epicsoft/bcrypt.svg)](https://microbadger.com/images/epicsoft/bcrypt "Get your own image badge on microbadger.com")
-[![](https://images.microbadger.com/badges/license/epicsoft/bcrypt.svg)](https://microbadger.com/images/epicsoft/bcrypt "Get your own license badge on microbadger.com")
 ----------
 
 ## Quick reference ##

@@ -7,7 +7,7 @@ Docker image for BCrypt CLI for generating and matching BCrypt hashes. Based on 
 
 Of this project, there is always only one version `latest` and so that the version stays up to date, it is rebuilt weekly.
 
-`latest` [Dockerfile]() ToDo Link
+`latest` [Dockerfile](https://gitlab.com/epicdocker/bcrypt/blob/master/Dockerfile)
 
 
 ## Requirements
@@ -30,7 +30,7 @@ Of this project, there is always only one version `latest` and so that the versi
 
 ### Generate a BCrypt hash
 
-    docker run [ToDo docker image] hash password 14
+    docker run registry.gitlab.com/epicdocker/bcrypt:latest hash password 14
     > $2a$14$uPMxyauwt6lrPXAW2rXsUeKo0fvcR/PP8dxQmPhcWFZqwoBmArnx2
 
 
@@ -38,7 +38,7 @@ Of this project, there is always only one version `latest` and so that the versi
 
 You may need to escape the `$` characters.
 
-    docker run [ToDo docker image] match password \$2a\$14\$uPMxyauwt6lrPXAW2rXsUeKo0fvcR/PP8dxQmPhcWFZqwoBmArnx2
+    docker run registry.gitlab.com/epicdocker/bcrypt:latest match password \$2a\$14\$uPMxyauwt6lrPXAW2rXsUeKo0fvcR/PP8dxQmPhcWFZqwoBmArnx2
     > yes
 
 
@@ -46,7 +46,7 @@ You may need to escape the `$` characters.
 
 You may need to escape the `$` characters.
 
-    docker run [ToDo docker image] cost \$2a\$14\$uPMxyauwt6lrPXAW2rXsUeKo0fvcR/PP8dxQmPhcWFZqwoBmArnx2
+    docker run registry.gitlab.com/epicdocker/bcrypt:latest cost \$2a\$14\$uPMxyauwt6lrPXAW2rXsUeKo0fvcR/PP8dxQmPhcWFZqwoBmArnx2
     > 14
 
 
@@ -54,9 +54,10 @@ You may need to escape the `$` characters.
 
 - https://gitlab.com/epicdocker/bcrypt
 - https://hub.docker.com/r/epicsoft/bcrypt/
+- https://quay.io/repository/epicsoft/bcrypt
 - https://github.com/shoenig/bcrypt-tool
 
 
 ## License
 
-MIT License see [LICENSE]() ToDo Link
+MIT License see [LICENSE](https://gitlab.com/epicdocker/bcrypt/blob/master/LICENSE)

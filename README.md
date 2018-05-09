@@ -48,7 +48,7 @@ Of this project, there is always only one version `latest` and so that the versi
 
 ###  4.1. <a name='GenerateaBCrypthash'></a>Generate a BCrypt hash
 
-    docker run registry.gitlab.com/epicdocker/bcrypt:latest hash password 14
+    docker run --rm registry.gitlab.com/epicdocker/bcrypt:latest hash password 14
     > $2a$14$uPMxyauwt6lrPXAW2rXsUeKo0fvcR/PP8dxQmPhcWFZqwoBmArnx2
 
 
@@ -56,7 +56,7 @@ Of this project, there is always only one version `latest` and so that the versi
 
 You may need to escape the `$` characters.
 
-    docker run registry.gitlab.com/epicdocker/bcrypt:latest match password \$2a\$14\$uPMxyauwt6lrPXAW2rXsUeKo0fvcR/PP8dxQmPhcWFZqwoBmArnx2
+    docker run --rm registry.gitlab.com/epicdocker/bcrypt:latest match password \$2a\$14\$uPMxyauwt6lrPXAW2rXsUeKo0fvcR/PP8dxQmPhcWFZqwoBmArnx2
     > yes
 
 
@@ -64,7 +64,7 @@ You may need to escape the `$` characters.
 
 You may need to escape the `$` characters.
 
-    docker run registry.gitlab.com/epicdocker/bcrypt:latest cost \$2a\$14\$uPMxyauwt6lrPXAW2rXsUeKo0fvcR/PP8dxQmPhcWFZqwoBmArnx2
+    docker run --rm registry.gitlab.com/epicdocker/bcrypt:latest cost \$2a\$14\$uPMxyauwt6lrPXAW2rXsUeKo0fvcR/PP8dxQmPhcWFZqwoBmArnx2
     > 14
 
 

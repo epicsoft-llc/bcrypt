@@ -1,3 +1,5 @@
+# BCrypt
+
 <!-- vscode-markdown-toc -->
 * 1. [Versions](#Versions)
 * 2. [Requirements](#Requirements)
@@ -14,9 +16,6 @@
 	autoSave=true
 	/vscode-markdown-toc-config -->
 <!-- /vscode-markdown-toc -->
-
-
-# BCrypt
 
 Docker image for BCrypt CLI for generating and matching BCrypt hashes. Based on the [bcrypt-tool](https://github.com/shoenig/bcrypt-tool) by [Seth Hoenig (shoenig)](https://github.com/shoenig).
 

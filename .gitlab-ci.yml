@@ -1,17 +1,13 @@
+stages:
+  - build
+  - publish
+
 image: docker:latest
 
 services:
   - docker:dind
 
-stages:
-  - build
-  - latest
-  - dockerhub
-  - quayio
-
-before_script:  
-  
-  
+before_script:
   - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
   - export VERSION=$CI_COMMIT_REF_NAME
   - echo "running with version '$VERSION'"
@@ -22,34 +18,28 @@ Build:
     - docker info
     - docker build --pull -t $CI_REGISTRY_IMAGE:$VERSION .
     - docker push $CI_REGISTRY_IMAGE:$VERSION
-
-Latest:
-  stage: latest
-  script:    
-    - docker pull $CI_REGISTRY_IMAGE:$VERSION
     - docker tag $CI_REGISTRY_IMAGE:$VERSION $CI_REGISTRY_IMAGE:latest
     - docker push $CI_REGISTRY_IMAGE:latest
-  only:
-    - master
 
 DockerHub:
-  stage: dockerhub
+  stage: publish
+  variables:
+    DOCKER_HUB_IMAGE: epicsoft/bcrypt
   script:
-    - export DOCKER_HUB_IMAGE="epicsoft/bcrypt"
     - docker login -u $DOCKER_HUB_USER -p $DOCKER_HUB_PASS
-    - docker pull $CI_REGISTRY_IMAGE:$VERSION 
+    - docker pull $CI_REGISTRY_IMAGE:$VERSION
     - docker tag $CI_REGISTRY_IMAGE:$VERSION $DOCKER_HUB_IMAGE:latest
     - docker push $DOCKER_HUB_IMAGE:latest
-  only:
+  only: &onlyMaster
     - master
 
 QuayIO:
-  stage: quayio
+  stage: publish
+  variables:
+    QUAY_IO_IMAGE: quay.io/epicsoft/bcrypt
   script:
-    - export QUAY_IO_IMAGE="quay.io/epicsoft/bcrypt"
     - docker login -u="$QUAY_IO_USER" -p="$QUAY_IO_PASS" quay.io
-    - docker pull $CI_REGISTRY_IMAGE:$VERSION 
+    - docker pull $CI_REGISTRY_IMAGE:$VERSION
     - docker tag $CI_REGISTRY_IMAGE:$VERSION $QUAY_IO_IMAGE:latest
     - docker push $QUAY_IO_IMAGE:latest
-  only:
-    - master
+  only: *onlyMaster

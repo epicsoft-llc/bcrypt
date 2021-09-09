@@ -1,6 +1,6 @@
 FROM golang:alpine AS buildenv
 RUN apk add --no-cache git \
- && go get "gophers.dev/cmds/bcrypt-tool" \
+ && go install gophers.dev/cmds/bcrypt-tool@latest \
  && chmod +x /go/bin/bcrypt-tool
 
 FROM busybox:latest

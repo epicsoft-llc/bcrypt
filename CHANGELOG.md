@@ -10,7 +10,7 @@ BusyBox image and the current Go toolchain. Which bcrypt-tool version a particul
 docker image inspect --format '{{index .Config.Labels "image.bcrypt-tool.version"}}' epicsoft/bcrypt:1
 ```
 
-Entries here are dated, because there is no number to give them.
+Entries here are dated, because there is no number to give them. Each date is also a git tag with a release on GitHub.
 
 ---
 
@@ -31,7 +31,7 @@ Entries here are dated, because there is no number to give them.
 - Every image goes through `test/smoke.sh` before it is pushed, on every platform: `hash` with a given and with the
   default cost, `match` with the right and a wrong password and their exit codes, `cost`, and the refused 73-byte
   password.
-- A mirror on GitHub: `github.com/epicsoft-llc/bcrypt`.
+- A mirror on GitHub, `github.com/epicsoft-llc/bcrypt`, with a release for every entry of this changelog.
 
 ### Changed
 
@@ -42,3 +42,7 @@ Entries here are dated, because there is no number to give them.
 - Docker Hub gets an access token over stdin instead of a password on the command line; the description on Docker
   Hub is this README, uploaded by the pipeline.
 - README rewritten: tags, usage, quoting of hashes, migration notes; quay.io is no longer listed.
+
+---
+
+Earlier changes are in the git history of this repository.
